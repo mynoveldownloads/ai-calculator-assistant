@@ -9,11 +9,18 @@ pp = [10*i for i in range(50, 101)]
 
 def menu():
     while True:
-        user_prompt = input('>>> ')
-        bot = prompt(user_prompt, inst(user_prompt))
-        #print(bot) -> hint for function calling
-        execute = f'print(\'Answer:\', {bot})'
-        exec(execute)
+        try:
+            user_prompt = input('>>> ')
+
+            if inst(user_prompt) == 'None':
+                print('invalid prompt')
+            else:
+                bot = prompt(user_prompt, inst(user_prompt))
+                print(bot) #-> hint for function calling
+                execute = f'print(\'Answer:\', {bot})'
+                exec(execute)
+        except Exception as e:
+            print(f'invalid prompt \n{e}')
 
 
 if __name__ == '__main__':
@@ -28,4 +35,5 @@ Sample prompts:
 - give mean of xyz, hh, pp
 - sd of xyz, pp
 - give sd of xyz, hh and pp
+- what is the sum of xyz
 """
