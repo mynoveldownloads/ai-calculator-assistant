@@ -9,5 +9,5 @@ def prompt(txt_content: str, instructions: str="Calculate this variable") -> str
             'content': f'{instructions}. {txt_content}'
         }]
     )
-    return response['message']['content'] # Not rly sure how this works
+    return response['message']['content']
 
