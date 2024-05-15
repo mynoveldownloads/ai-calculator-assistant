@@ -19,7 +19,7 @@ def list_of_instructions(user_input):
         #         user input: what is the median of variable aaa bbb and ccc?
         #         system output: median(aaa), median(bbb), median(ccc)
         return output
-    elif ('mean') in user_input:
+    elif (('mean')in user_input):
         output = """
         Follow instructions properly. dont reply anything else but the system output template. if there are multiple variables, print it in commas
         "avg" or "average" in user input refers to the mean() function
@@ -34,7 +34,7 @@ def list_of_instructions(user_input):
         #         system output: mean(aaa), mean(bbb), mean(ccc)
         return output
 
-    elif (('sd') or ('standard deviation')) in user_input:
+    elif (('sd') in user_input):
         output = """
         Follow instructions properly. dont reply anything else but the system output template. if there are multiple variables, print it in commas
         SD refers to standard deviation. use the SD_population() function
@@ -55,7 +55,11 @@ def list_of_instructions(user_input):
         Example 1:
         user input: what is the variance of variable abc? give me the variance of abc. find abc variance
         system output: variance_population(abc)
-
+        
+        Example 2:
+        user input: what is the variance of variable aaa bbb and ccc?
+        system output: variance_population(aaa), variance_population(bbb), variance_population(ccc)
+        Answer nothing else but the system output given in the example.
         Note: if user asks "variance of abc" just reply variance_population(abc) and do not explain or elaborate any further.
         """
         #
