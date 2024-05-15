@@ -16,7 +16,7 @@ def menu():
             user_prompt = input(f'{datetime.now().strftime("%H:%M:%S")} [👽] : ')
             cmd_list.extend(user_prompt.lower().split())
             #print(cmd_list)
-            if ('bye' or 'exit') in cmd_list:
+            if ('bye' or 'exit' in cmd_list):
                 print(f'{datetime.now().strftime("%H:%M:%S")} [🖥️] : Program exited. Goodbye!')
                 break
             else:
